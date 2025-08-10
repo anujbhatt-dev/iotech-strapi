@@ -5,12 +5,12 @@
   },
   "options": {},
   "attributes": {
-    "Logo": {
+    "logo": {
       "type": "component",
       "component": "shared.logo-link",
       "repeatable": false
     },
-    "NavItems": {
+    "navItems": {
       "type": "component",
       "component": "shared.link",
       "repeatable": true

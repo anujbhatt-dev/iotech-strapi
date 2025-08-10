@@ -389,7 +389,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    Appbar: Schema.Attribute.Component<'layout.header', false> &
+    appBar: Schema.Attribute.Component<'layout.header', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -398,7 +398,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Footer: Schema.Attribute.Component<'layout.footer', false> &
+    footer: Schema.Attribute.Component<'layout.footer', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -407,6 +407,117 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHeroSliderHeroSlider extends Struct.SingleTypeSchema {
+  collectionName: 'hero_sliders';
+  info: {
+    displayName: 'Hero Slider';
+    pluralName: 'hero-sliders';
+    singularName: 'hero-slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heroSlider: Schema.Attribute.Component<'layout.hero-slide', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hero-slider.hero-slider'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeamTeam extends Struct.SingleTypeSchema {
+  collectionName: 'teams';
+  info: {
+    displayName: 'Team';
+    pluralName: 'teams';
+    singularName: 'team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::team.team'>;
+    publishedAt: Schema.Attribute.DateTime;
+    teamSection: Schema.Attribute.Component<'layout.our-team', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTestimonialTestimonial extends Struct.SingleTypeSchema {
+  collectionName: 'testimonials';
+  info: {
+    displayName: 'Testimonial';
+    pluralName: 'testimonials';
+    singularName: 'testimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    testimonialSection: Schema.Attribute.Component<
+      'layout.testimonials-section',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -923,6 +1034,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::global.global': ApiGlobalGlobal;
+      'api::hero-slider.hero-slider': ApiHeroSliderHeroSlider;
+      'api::team.team': ApiTeamTeam;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "Appbar": {
+    "appBar": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
@@ -25,7 +25,7 @@
       "component": "layout.header",
       "repeatable": false
     },
-    "Footer": {
+    "footer": {
       "type": "component",
       "pluginOptions": {
         "i18n": {

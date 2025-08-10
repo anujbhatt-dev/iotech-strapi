@@ -22,15 +22,11 @@
     },
     "type": {
       "type": "enumeration",
-      "default": "PRIMARY",
+      "default": "LINK",
       "enum": [
-        "PRIMARY",
-        "SECONDARY"
+        "LINK",
+        "DROPDOWN"
       ]
-    },
-    "hasSubLinks": {
-      "type": "boolean",
-      "default": false
     }
   },
   "config": {}

@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "hero_sliders",
+  "info": {
+    "singularName": "hero-slider",
+    "pluralName": "hero-sliders",
+    "displayName": "Hero Slider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "heroSlider": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "layout.hero-slide",
+      "repeatable": true
+    }
+  }
+}

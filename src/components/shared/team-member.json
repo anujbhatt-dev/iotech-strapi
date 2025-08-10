@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_team_members",
+  "info": {
+    "displayName": "Team Member"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "text",
+      "default": "https://web.whatsapp.com"
+    },
+    "phone": {
+      "type": "text",
+      "default": "0000000000000"
+    },
+    "email": {
+      "type": "string",
+      "default": "example@gmail.com"
+    },
+    "imageUrl": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}
